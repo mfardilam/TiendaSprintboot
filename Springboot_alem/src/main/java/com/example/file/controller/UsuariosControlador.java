@@ -21,33 +21,38 @@ public class UsuariosControlador {
 	@Autowired
 	private IUsuarioService service;
 	
-	@GetMapping("/listar")
+	@GetMapping("/inicio")
+	public String inicio(Model model) {
+		return "index";
+	}
+	
+	@GetMapping("/listarUser")
 	public String listar(Model model) {
 		List<Usuarios> usuarios = service.listar();
 		model.addAttribute("usuarios", usuarios);
 		return "inicio";
 	}
 	
-	@GetMapping("/new")
+	@GetMapping("/newUser")
 	public String agregar(Model model) {
 		model.addAttribute("usuarios", new Usuarios());
 		return "nuevoUser";
 	}
-	@PostMapping("/save")
+	@PostMapping("/saveUser")
 	public String save(@Validated Usuarios user,Model model) {
 		service.save(user);
-		return "redirect:/listar";		
+		return "redirect:/listarUser";		
 	}
-	@GetMapping("/editar/{id}")
+	@GetMapping("/editarUser/{id}")
 	public String editar(@PathVariable int id, Model model) {
 		Optional<Usuarios> usuarios = service.listarId(id);
 		model.addAttribute("usuarios", usuarios);
 		return "nuevoUser";
 	}
 	
-	@GetMapping("/eliminar/{id}")
+	@GetMapping("/eliminarUser/{id}")
 	public String delete(Model model, @PathVariable int id) {
 		service.delete(id);
-		return "redirect:/listar";
+		return "redirect:/listarUser";
 	}
 }
