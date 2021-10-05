@@ -1,6 +1,9 @@
 package com.example.file.interfaceServices;
 
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.example.file.model.Cliente;
 
 public interface ClienteService {

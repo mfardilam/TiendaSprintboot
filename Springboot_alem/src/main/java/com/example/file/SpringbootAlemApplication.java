@@ -10,7 +10,7 @@ import com.example.file.controller.CSVController;
 
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = CSVController.class)
+//@ComponentScan(basePackageClasses = CSVController.class)
 public class SpringbootAlemApplication {
 
 	public static void main(String[] args) {

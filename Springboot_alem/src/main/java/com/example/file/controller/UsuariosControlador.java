@@ -21,7 +21,7 @@ public class UsuariosControlador {
 	@Autowired
 	private IUsuarioService service;
 	
-	@GetMapping("/inicio")
+	@GetMapping({"/","/login"})
 	public String inicio(Model model) {
 		return "index";
 	}

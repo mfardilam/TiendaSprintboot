@@ -31,7 +31,7 @@ import com.example.file.csv.ResponseMessage;
 //@CrossOrigin("http://localhost:8080") //para poder llamar API
 @Controller //Vuelve la clase controlador
 @RequestMapping("/api/csv") //Para mapear los metodos específicos cuando un API la consume
-public class CSVController {
+public class CSVController {/*
 	
 	@Autowired
 	  CSVService fileService;
@@ -91,7 +91,7 @@ public class CSVController {
 	        .contentType(MediaType.parseMediaType("application/csv"))
 	        .body(file);
 	  }
-	}
+	*/}
 	
 
 
