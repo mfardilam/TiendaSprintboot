@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.file.interfaceServices.IUsuarioService;
@@ -15,6 +16,9 @@ public class UsuariosService implements IUsuarioService{
 	
 	@Autowired
 	private IUsuarios data;
+	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
 	public List<Usuarios> listar() {
@@ -29,7 +33,8 @@ public class UsuariosService implements IUsuarioService{
 	@Override
 	public int save(Usuarios u) {
 		int rta=0;
-		Usuarios usuario=data.save(u);
+		u.setPassword(passwordEncoder.encode(u.getPassword()));
+		Usuarios usuario=data.save(u);		
 		if(!usuario.equals(null)) {
 			rta=1;
 		}

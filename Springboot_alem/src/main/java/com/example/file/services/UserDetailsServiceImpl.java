@@ -25,11 +25,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	
     @Override
      public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
+    	
      //Buscar el usuario con el repositorio y si no existe lanzar una exepcion
-    	com.example.file.model.User appUser = 
+    	com.example.file.model.Usuarios appUser = 
                  userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
-		
+
     //Mapear nuestra lista de Authority con la de spring security 
     List grantList = new ArrayList();
     for (Authority authority: appUser.getAuthority()) {
@@ -38,8 +38,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             grantList.add(grantedAuthority);
     }
 		
-    //Crear El objeto UserDetails que va a ir en sesion y retornarlo.
-    UserDetails user = (UserDetails) new User(appUser.getUsername(), appUser.getPassword(), grantList);
-         return user;
+    //Crear El objeto UserDetails que va a ir en sesion y retornarlo.	
+    	UserDetails user = (UserDetails) new User(appUser.getUsername(), appUser.getPassword(), grantList);
+    	return user;
     }
 }

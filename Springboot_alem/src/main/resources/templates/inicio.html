@@ -81,7 +81,10 @@
 				  </a>
 				</li>				
 			  </ul>
-			</div>		
+			</div>
+		<form th:action="@{/logout}" method="post">
+            <input type="submit" value="Cerrar Sesion"/>
+        </form>		
 	  </div>
 	</nav><br>
 		<div class="container mt-4">
@@ -103,12 +106,13 @@
 						<td th:text="${usuarios.cedula_usuario}"></td>
 						<td th:text="${usuarios.nombre_usuario}"></td>
 						<td th:text="${usuarios.email_usuario}"></td>
-						<td th:text="${usuarios.usuario}"></td>
-						<td th:text="${usuarios.pass}"></td>
+						<td th:text="${usuarios.username}"></td>
+						<td th:text="${usuarios.password}"></td>
 						<td>
 							<a th:href="@{/editarUser/}+${usuarios.id}" class="btn btn-warning">Editar</a>
 							<a th:onclick="eliminar([[${usuarios.id}]])" class="btn btn-danger">Eliminar</a>
 						</td>
+						
 					</tr>
 				</tbody>
 			</table>

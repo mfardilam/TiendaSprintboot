@@ -4,10 +4,10 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.file.model.User;
+import com.example.file.model.Usuarios;
 
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long>  {
-    public Optional<User> findByUsername(String username);
+public interface UserRepository extends CrudRepository<Usuarios, Long>  {
+    public Optional<Usuarios> findByUsername(String username);
 }
