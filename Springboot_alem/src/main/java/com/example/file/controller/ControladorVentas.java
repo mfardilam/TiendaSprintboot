@@ -16,8 +16,8 @@ import com.example.file.model.Cliente;
 @RequestMapping
 public class ControladorVentas {
 
-	@Autowired
-	private VentasService ventasService;
+	//@Autowired
+	//private VentasService ventasService;
 
 	
 	
