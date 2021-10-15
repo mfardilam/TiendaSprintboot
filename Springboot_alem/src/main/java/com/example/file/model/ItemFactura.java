@@ -55,6 +55,8 @@ public class ItemFactura implements Serializable {
 		this.producto = producto;
 	}
 	
+	
+	
 	private static final long serialVersionUID = 1L;
 
 }

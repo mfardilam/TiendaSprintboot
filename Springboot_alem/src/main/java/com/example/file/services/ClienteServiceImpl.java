@@ -77,6 +77,13 @@ public class ClienteServiceImpl implements ClienteService {
 		facturaDao.save(factura);
 		
 	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Productos findProductosById(Long id) {
+		// TODO Auto-generated method stub
+		return productoDao.findById(id).orElse(null);
+	}
 	
 	
 

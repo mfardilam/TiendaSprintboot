@@ -21,5 +21,9 @@ public interface ClienteService {
 	public Cliente findOne(Long idcliente);
 	
 	public List<Productos> findByNombre(String term);
+	
 	public void guardarFactura (Factura factura);
+	
+	public Productos findProductosById(Long itemId);
+	
 }

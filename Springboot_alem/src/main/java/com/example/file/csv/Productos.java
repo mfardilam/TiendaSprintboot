@@ -11,7 +11,7 @@ public class Productos {
 	
 	@Id
 	@Column(name = "idproductos")
-	private int id;
+	private long id;
 	
 	@Column(name = "codigo")
 	private int codigo;
@@ -36,7 +36,7 @@ public class Productos {
 		super();
 	}
 
-	public Productos(int id, int codigo, String nombre, int nitp, double precioc, double iva, double preciov) {
+	public Productos(long id, int codigo, String nombre, int nitp, double precioc, double iva, double preciov) {
 		super();
 		this.id = id;
 		this.codigo = codigo;
@@ -47,11 +47,11 @@ public class Productos {
 		this.preciov = preciov;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
