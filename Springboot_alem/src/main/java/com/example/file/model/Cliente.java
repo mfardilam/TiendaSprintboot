@@ -3,8 +3,14 @@ package com.example.file.model;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
+
+import org.springframework.cache.annotation.CacheEvict;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -23,6 +29,17 @@ public class Cliente implements Serializable {
     public String direccion;
     public String email;
     public String telefono;
+    
+    @OneToMany(mappedBy="cliente",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonIgnore
+   
+    private List<Factura>facturas;
+    
+    
+    
+	public Cliente() {
+		facturas = new ArrayList<Factura>();
+	}
 	public long getIdcliente() {
 		return idcliente;
 	}
@@ -59,9 +76,27 @@ public class Cliente implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	
+	public List<Factura> getFacturas() {
+		return facturas;
+	}
+
+	public void setFacturas(List<Factura> facturas) {
+		this.facturas = facturas;
+	}
+
+	
+	public void addFactura(Factura factura) {
+		facturas.add(factura);
+		
+	}
+	
+	
+	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
 	
     
 }

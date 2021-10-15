@@ -1,4 +1,4 @@
-package com.example.file.controller;
+/*package com.example.file.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,3 +22,4 @@ public class ControladorVentas {
 	
 	
 	}  
+*/

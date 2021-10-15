@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<title>Bienvenido - Alem Make Up</title>
@@ -20,18 +20,24 @@
 					<div class="col-12 user-img">
 						<img src="images/avatar_verde.svg"/>
 					</div>
-					<form class="col-12 login" style="height: 200px;" >
+					<form class="col-12 login" th:action="@{/login}" method="post" style="height: 200px;" >
 						<div class="form-group" id="user-group">
-							<input type ="text" class="form-control" placeholder="Ingrese el usuario"/>							
+							<input type ="text" class="form-control" placeholder="Ingrese el usuario" name="username"/>							
 						</div><br>
 						<div class="form-group" id="pass-group">
-							<input type ="password" class="form-control" placeholder="Ingrese contraseña"/>							
+							<input type ="password" class="form-control" placeholder="Ingrese contraseña" name="password"/>							
 						</div><br>
-						<a th:href="@{/listarUser}" class="btn btn-warning">
-							<i class="fas fa-sign-in-alt"></i>
-							 Ingresar
-						</a><br>
+						<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
 					</form>
+					<div class="col-12 forgot">
+                    	<a href="#">¿Recordar contrasena?</a>
+                	</div>
+                	<div th:if="${param.error}" class="alert alert-danger" role="alert">
+		            	Invalid username and password.
+		        	</div>
+		        	<div th:if="${param.logout}" class="alert alert-success" role="alert">
+		            	You have been logged out.
+		        	</div>
 				</div>
 			</div>
 		</div>

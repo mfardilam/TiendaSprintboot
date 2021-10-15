@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,11 +31,16 @@ import com.example.file.csv.ResponseMessage;
 
 //@CrossOrigin("http://localhost:8080") //para poder llamar API
 @Controller //Vuelve la clase controlador
-@RequestMapping("/api/csv") //Para mapear los metodos específicos cuando un API la consume
-public class CSVController {/*
+@RequestMapping //Para mapear los metodos específicos cuando un API la consume
+public class CSVController {
 	
 	@Autowired
 	  CSVService fileService;
+	
+	@GetMapping("/archivoCSV")
+	public String inicio(Model model) {
+		return "productos";
+	}
 
 	  @PostMapping("/upload") //Post Request
 	  public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
@@ -49,7 +55,7 @@ public class CSVController {/*
 		        message = "Carga exitosa: " + file.getOriginalFilename();
 		        
 		        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-		                .path("/api/csv/download/")
+		                .path("/download/")
 		                .path(file.getOriginalFilename())
 		                .toUriString();
 		        System.out.println("Mensaje antes del return");
@@ -81,6 +87,8 @@ public class CSVController {/*
 		      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		    }
 		  }
+	  
+	
 	  @GetMapping("/download/{fileName:.+}")
 	  public ResponseEntity<Resource> archivo(@PathVariable String fileName) {
 		  //Descargar el archivo CSV
@@ -91,7 +99,5 @@ public class CSVController {/*
 	        .contentType(MediaType.parseMediaType("application/csv"))
 	        .body(file);
 	  }
-	*/}
+	}
 	
-
-

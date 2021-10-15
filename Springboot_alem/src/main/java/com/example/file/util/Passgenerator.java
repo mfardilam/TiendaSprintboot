@@ -1,5 +1,5 @@
 package com.example.file.util;
-
+/*
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class Passgenerator {
@@ -9,3 +9,4 @@ public class Passgenerator {
 	System.out.println(bCryptPasswordEncoder.encode("1234"));
 	}
 }
+*/
