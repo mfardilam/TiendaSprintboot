@@ -7,6 +7,6 @@ import com.example.file.model.Factura;
 
 @Repository
 public interface IFacturaDao extends CrudRepository<Factura, Long> {
-	//CREA UNA IMPLEMENTACION POR DEFAULT SPRING 
+	//CREA UNA IMPLEMENTACION POR DEFAULT SPRINg
 	
 }
