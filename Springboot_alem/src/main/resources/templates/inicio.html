@@ -66,8 +66,13 @@
 				  </a>
 				</li>
 				<li class="nav-item">
+<<<<<<< HEAD
 				  <a  th:href="@{/archivoCSV}" class="nav-link active" aria-current="page" href="#">
 				  	<button class="btn btn-outline-dark" type="submit" style="background-color: #a4ac86;">Productos</button>
+=======
+				  <a th:href="@{/archivoCSV}" class="nav-link active" aria-current="page" href="#">
+				  	<button class="btn btn-outline-dark" type="submit" style="background-color: #ccd5ae;">Productos</button>
+>>>>>>> branch 'login' of https://github.com/mfardilam/TiendaSprintboot.git
 				  </a>
 				</li>
 				<li class="nav-item">
@@ -76,14 +81,14 @@
 				  </a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link active" aria-current="page" href="#">
+				  <a th:href="@{/reportes}" class="nav-link active" aria-current="page" href="#">
 				  	<button class="btn btn-outline-dark" type="submit" style="background-color: #ccd5ae;">Reportes</button>
 				  </a>
 				</li>				
 			  </ul>
 			</div>
 		<form th:action="@{/logout}" method="post">
-            <input type="submit" value="Cerrar Sesion"/>
+			<button class="btn btn-outline-dark" type="submit" style="background-color: #a4ac86;">Salir</button>
         </form>		
 	  </div>
 	</nav><br>
@@ -91,23 +96,23 @@
 			<table class = "table">
 				<thead>
 					<tr>
-						<th>Id</th>
+<!-- 						<th>Id</th> -->
 						<th>Cedula</th>
 						<th>Nombre</th>
 						<th>Email</th>
 						<th>Usuario</th>
-						<th>Contraseña</th>
+<!-- 						<th>Contraseña</th> -->
 						<th>Acciones</th>
 					</tr>				
 				</thead>
 				<tbody>
 					<tr th:each="usuarios:${usuarios}">
-						<td th:text="${usuarios.id}"></td>
+<!-- 						<td th:text="${usuarios.id}"></td> -->
 						<td th:text="${usuarios.cedula_usuario}"></td>
 						<td th:text="${usuarios.nombre_usuario}"></td>
 						<td th:text="${usuarios.email_usuario}"></td>
 						<td th:text="${usuarios.username}"></td>
-						<td th:text="${usuarios.password}"></td>
+<!-- 						<td th:text="${usuarios.password}"></td> -->
 						<td>
 							<a th:href="@{/editarUser/}+${usuarios.id}" class="btn btn-warning">Editar</a>
 							<a th:onclick="eliminar([[${usuarios.id}]])" class="btn btn-danger">Eliminar</a>

@@ -24,7 +24,6 @@ INSERT INTO authorities_users (usuario_id, authority_id) VALUES (1,2);
 
 
 @SpringBootApplication
-//@ComponentScan(basePackageClasses = CSVController.class)
 public class SpringbootAlemApplication {
 
 	public static void main(String[] args) {

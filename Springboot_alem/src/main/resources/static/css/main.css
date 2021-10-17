@@ -20,7 +20,7 @@ header{
 	color:black;
 	}
 .navigation ul li a:hover{
-	background:#cb997e;
+	background:#ccd5ae;
 }
 .titulo{
 	background:#cb997e;
@@ -90,7 +90,7 @@ button {
 }
 
 button.primary {
-    background-color: #cb997e;
+    background-color: #ccd5ae;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
     color: black;
 }

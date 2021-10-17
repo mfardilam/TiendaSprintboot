@@ -66,8 +66,13 @@
 				  </a>
 				</li>
 				<li class="nav-item">
+<<<<<<< HEAD
 				  <a  th:href="@{/archivoCSV}" class="nav-link active" aria-current="page" href="#">
 				  	<button class="btn btn-outline-dark" type="submit" style="background-color: #a4ac86;">Productos</button>
+=======
+				  <a th:href="@{/archivoCSV}" class="nav-link active" aria-current="page" href="#">
+				  	<button class="btn btn-outline-dark" type="submit" style="background-color: #ccd5ae;">Productos</button>
+>>>>>>> branch 'login' of https://github.com/mfardilam/TiendaSprintboot.git
 				  </a>
 				</li>
 				<li class="nav-item">
@@ -76,12 +81,15 @@
 				  </a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link active" aria-current="page" href="#">
+				  <a th:href="@{/reportes}" class="nav-link active" aria-current="page" href="#">
 				  	<button class="btn btn-outline-dark" type="submit" style="background-color: #ccd5ae;">Reportes</button>
 				  </a>
 				</li>				
 			  </ul>
-			</div>		
+			</div>	
+			<form th:action="@{/logout}" method="post">
+				<button class="btn btn-outline-dark" type="submit" style="background-color: #a4ac86;">Salir</button>
+        	</form>	
 	  </div>
 	</nav><br>
 		<div class="container mt-4">
