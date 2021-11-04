@@ -39,7 +39,7 @@
 }
 
 li {
-	margin: auto 4vh !important;
+	margin: auto 5vh !important;
 }
 
 .cliente {
@@ -79,21 +79,21 @@ li {
 						<li class="nav-item"><a th:href="@{/archivoCSV}"
 							class="nav-link active" aria-current="page" href="#">
 								<button class="btn btn-outline-dark" type="submit"
-									style="background-color: #a4ac86;">Productos</button>
+									style="background-color: #ccd5ae;">Productos</button>
 						</a></li>
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">
-								<button class="btn btn-outline-dark" type="submit"
-									style="background-color: #ccd5ae;">Ventas</button>
+						<li class="nav-item">
+							  <a th:href="@{/reportes}" class="nav-link active" aria-current="page" href="#">
+							  	<button class="btn btn-outline-dark" type="submit" style="background-color: #ccd5ae;">Reportes</button>
 						</a></li>
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">
-								<button class="btn btn-outline-dark" type="submit"
-									style="background-color: #ccd5ae;">Reportes</button>
-						</a></li>
+						<li>						
+						<form th:action="@{/logout}" method="post">
+						<button class="btn btn-outline-dark" type="submit"
+							style="background-color: #a4ac86;">Salir</button>
+						</form></li>
 					</ul>
 				</div>
 			</div>
+					
 		</nav>
 		<br>
 	<a class="btn btn-light btn-xs" th:href="@{'/listarCliente'}"
@@ -151,7 +151,7 @@ li {
 
 
 		</table>
-<h5>total <span  id="gran_total">0</span></h5><!-- reccorre todos los total importe -->
+<h5>Total:  <span  id="gran_total">0</span></h5><!-- reccorre todos los total importe -->
 
 
 		<div class="form-group row">

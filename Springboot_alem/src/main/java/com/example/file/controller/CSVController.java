@@ -99,10 +99,3 @@ public class CSVController {
 	        .body(file);
 	  }
 	}
-<<<<<<< HEAD
-	
-=======
-	
-
-
->>>>>>> branch 'login' of https://github.com/mfardilam/TiendaSprintboot.git
